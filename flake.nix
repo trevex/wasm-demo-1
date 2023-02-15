@@ -31,8 +31,7 @@
               targets = [ "wasm32-wasi" ];
             })
             rust-analyzer
-            buildah
-            podman
+            wasmtime
           ];
 
           LD_LIBRARY_PATH = "${lib.makeLibraryPath buildInputs}";

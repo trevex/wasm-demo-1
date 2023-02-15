@@ -32,7 +32,6 @@ async fn main() -> anyhow::Result<()> {
     {
         use std::os::wasi::io::FromRawFd;
 
-        tracing_subscriber::fmt::init();
         let std_listener = unsafe { std::net::TcpListener::from_raw_fd(3) };
         std_listener.set_nonblocking(true).unwrap();
         axum::Server::from_tcp(std_listener)
